@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "@udea-io/eslint-config/react",
+    "react-app"
+  ]
+}

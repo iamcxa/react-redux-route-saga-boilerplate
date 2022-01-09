@@ -1,0 +1,13 @@
+{
+  "test": "Test",
+
+  "exam": {
+    "home": {
+      "search": "Search"
+    },
+    "profile": {
+      "followers":"Followers",
+      "following":"Following"
+    }
+  }
+}
