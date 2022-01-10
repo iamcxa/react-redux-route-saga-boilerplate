@@ -1,7 +1,5 @@
-import parseLanguages from 'base-shell/lib/utils/locale';
 import { lazy } from 'react';
 
-import locales from './locales';
 import themes from './themes';
 
 const config = {
