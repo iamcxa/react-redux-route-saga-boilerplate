@@ -17,5 +17,4 @@ const Template = (args) => <LazyImage {...args} />;
 
 export const Default = Template.bind({});
 
-Default.args = {
-};
+Default.args = {};
