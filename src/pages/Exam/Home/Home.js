@@ -80,6 +80,7 @@ const Home = () => {
       p={{
         xs: theme.spacing(2.5),
       }}
+      pt={matchesXs ? theme.spacing(1) : 0}
     >
       <Stack spacing={3.75}>
         <Stack spacing={matchesXs ? 2 : 2.5}>

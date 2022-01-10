@@ -103,7 +103,6 @@ const SearchResult = () => {
       >
         <Box display="flex" flexDirection="column">
           <Stack spacing={matches ? 0 : 3}>
-            {matches && <PageBar Icon={ArrowBackIosNewIcon} zIndex={5000} />}
             {matches && <PageBar title="Results" />}
             {!matches && <PageBar Icon={ArrowBackIosNewIcon} title="Results" />}
 

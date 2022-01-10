@@ -23,7 +23,7 @@ const SearchItem = ({ onClick, item, index, data }) => {
       variant="text"
       sx={{
         // mr: '34px',
-        mt: theme.spacing(3),
+        mt: theme.spacing(2),
       }}
     >
       <Box key={index} display="flex" flexDirection="column">

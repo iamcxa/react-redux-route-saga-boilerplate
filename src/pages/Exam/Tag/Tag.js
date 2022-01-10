@@ -6,6 +6,7 @@ import {
   ImageListItem,
   Skeleton,
   Stack,
+  Toolbar,
   useMediaQuery,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
@@ -100,11 +101,13 @@ const Tags = () => {
         }}
       >
         <Box display="flex" flexDirection="column" mt={!matches && theme.spacing(10)}>
-          <Stack spacing={3}>
-            {matches && <PageBar Icon={ArrowBackIosNewIcon} zIndex={5000} />}
-            <PageBar title="Tags" />
+          <Stack spacing={2}>
+            <Toolbar sx={{ display: matches ? 'block' : 'none' }} />
+            <Stack spacing={3}>
+              <PageBar title="Tags" />
 
-            {getList()}
+              {getList()}
+            </Stack>
           </Stack>
         </Box>
       </Container>

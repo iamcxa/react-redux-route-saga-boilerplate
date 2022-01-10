@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import {
   AppBar as MUIAppBar,
   IconButton,
@@ -40,14 +40,16 @@ const AppBar = ({ drawerWidth, title, menu, logo }) => {
         </Toolbar>
       </MUIAppBar>
 
+      {!matchHome && matchesXs && (
+        <PageBar Icon={ArrowBackIosNewIcon} position="fixed" zIndex={5000} pl={theme.spacing(3)} />
+      )}
       {matchHome && matchesXs && (
         <>
           <MUIAppBar
             position="fixed"
-            color="primary"
             sx={{
               backgroundImage: 'none',
-              background: Colors.profileBackground,
+              background: Colors.bodyBackground,
               border: 'none',
               boxShadow: 'none',
               top: 0,
@@ -87,6 +89,7 @@ export const PageBar = ({
   title = 'Home Page',
   to = '/exam/home',
   zIndex,
+  ...props
 }) => {
   const theme = useTheme();
   const matchesXs = useMediaQuery(theme.breakpoints.down('sm'));
@@ -99,12 +102,14 @@ export const PageBar = ({
         border: 'none',
         boxShadow: 'none',
         display,
-        mt: matchesXs && theme.spacing(3),
+        pt: matchesXs && theme.spacing(2),
+        pl: matchesXs && theme.spacing(0.5),
         zIndex,
+        ...props,
       }}
     >
-      <Toolbar variant="dense">
-        <Stack spacing={1} direction="row">
+      <Toolbar variant="dense" disableGutters={matchesXs}>
+        <Stack spacing={1} direction="row" alignItems="center">
           {Icon && (
             <RouterLink to={to}>
               <IconButton edge="start" aria-label="back">
@@ -113,7 +118,7 @@ export const PageBar = ({
             </RouterLink>
           )}
 
-          <Typography variant="h4" color="primary" sx={{ fontSize: '30px' }}>
+          <Typography variant="h4" color="primary" sx={{ fontSize: matchesXs ? '24px' : '30px' }}>
             {title}
           </Typography>
         </Stack>

@@ -1,4 +1,4 @@
-import { Grid, useMediaQuery } from '@mui/material';
+import { Grid, Toolbar, useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import React from 'react';
@@ -19,7 +19,8 @@ const HomeLayout = () => {
   const theme = useTheme();
   const { t, i18n } = useTranslation();
 
-  const matches = useMediaQuery(theme.breakpoints.down('lg'));
+  const matchesLg = useMediaQuery(theme.breakpoints.down('lg'));
+  const matchesXs = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <Box sx={Styles.home.containerStyle.homeWrapper(theme)}>
@@ -42,6 +43,7 @@ const HomeLayout = () => {
           // overflow="auto"
         >
           <Scrollbars renderView={renderView('mui-grid-left')} autoHide>
+            <Toolbar sx={{ display: matchesXs ? 'block' : 'none', minHeight: theme.spacing(9) }} />
             <Outlet />
           </Scrollbars>
         </Grid>
@@ -54,7 +56,7 @@ const HomeLayout = () => {
           lg={4}
           xl={2}
           sx={{
-            display: matches && 'none',
+            display: matchesLg && 'none',
           }}
           height="100vh"
           // overflow="auto"

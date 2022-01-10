@@ -31,7 +31,7 @@ const getDrawerItems = ({ onClick, menu, LogoComponent, logoTo, matches, ...prop
 const getLogo = (LogoComponent, display) => (
   <Box
     sx={{
-      padding: '32px 12px 12px',
+      padding: '40px 4px 24px',
       textAlign: 'center',
       // display,
     }}
