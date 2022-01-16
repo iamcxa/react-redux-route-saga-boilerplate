@@ -3,6 +3,8 @@ import { lazy } from 'react';
 import themes from './themes';
 
 const config = {
+  GA_TRACKING_ID: '',
+
   API_VERSION: 1,
   STORE_VERSION: 0,
 

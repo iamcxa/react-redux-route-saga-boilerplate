@@ -25,6 +25,8 @@
     "react-custom-scrollbars-2": "^4.4.0",
     "react-dom": "^17.0.2",
     "react-easy-crop": "^3.5.3",
+    "react-ga": "^3.3.0",
+    "react-helmet": "^6.1.0",
     "react-i18next": "^11.15.2",
     "react-icons": "^4.3.1",
     "react-infinite-scroll-component": "^6.1.0",
