@@ -13,7 +13,7 @@ const MainLayout = lazy(() => import('./Layout/Layout'));
 const Tag = lazy(() => import('./Tag/Tag'));
 
 const wrapLoader = (Comp, props) => (
-  <React.Suspense fallback={<ActivityIndicator bgcolor="background" height="100vh" />}>
+  <React.Suspense fallback={<ActivityIndicator bgColor="background" height="100vh" />}>
     <Comp {...props} />
   </React.Suspense>
 );

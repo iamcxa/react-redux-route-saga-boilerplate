@@ -11,7 +11,7 @@ const rootRoute = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useGoogleAnalytics();
   return (
-    <Suspense fallback={<ActivityIndicator bgcolor="background" height="100vh" />}>
+    <Suspense fallback={<ActivityIndicator bgColor="background" height="100vh" />}>
       <Helmet>
         <meta charSet="utf-8" />
         <title>My React App</title>

@@ -5,7 +5,7 @@ import React from 'react';
 
 import ThemeProvider from '~/components/ExamUI/Theme';
 
-const ActivityIndicator = ({ height, bgcolor, variant, ...props }) => {
+const ActivityIndicator = ({ height, indicatorColor, bgColor, variant, ...props }) => {
   const theme = useTheme();
   const Indicator = variant === 'circle' ? CircularProgress : LinearProgress;
   return (
@@ -17,11 +17,11 @@ const ActivityIndicator = ({ height, bgcolor, variant, ...props }) => {
         justifyContent="center"
         alignItems="center"
         height={height}
-        bgcolor={theme.palette[bgcolor]}
+        bgcolor={theme.palette[bgColor]}
       >
         <Indicator
-          color="primary"
           sx={{
+            color: indicatorColor.startsWith('#') ? indicatorColor : theme.palette[indicatorColor],
             width: variant === 'linear' && '33vw',
           }}
           {...props}
@@ -33,13 +33,15 @@ const ActivityIndicator = ({ height, bgcolor, variant, ...props }) => {
 
 ActivityIndicator.propTypes = {
   height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  bgcolor: PropTypes.string,
+  bgColor: PropTypes.string,
+  indicatorColor: PropTypes.string,
   variant: PropTypes.oneOf(['linear', 'circle']),
 };
 
 ActivityIndicator.defaultProps = {
   height: '100%',
-  bgcolor: 'transparent',
+  bgColor: 'transparent',
+  indicatorColor: 'primary',
   variant: 'circle',
 };
 
