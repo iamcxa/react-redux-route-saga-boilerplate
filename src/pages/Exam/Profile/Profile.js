@@ -92,7 +92,14 @@ const Profile = () => {
     if (userStore.friend.total < 0) {
       dispatch(UserActions.fetchGetFriends(1));
     }
-  }, [minHeight, dispatch, userStore.user.total, userStore.friend.total]);
+  }, [
+    minHeight,
+    dispatch,
+    userStore.user.total,
+    userStore.friend.total,
+    userStore.user.isFetching,
+    userStore.friend.isFetching,
+  ]);
   return (
     <TabContext value={value}>
       <AppBar

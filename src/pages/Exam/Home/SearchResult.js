@@ -29,11 +29,17 @@ const SearchResult = () => {
     if (!page) {
       navigate('/exam');
     }
-    if (page !== 1 && userStore.userByKeyword.total < 1 && userStore.userByKeyword.page !== page) {
-      dispatch(UserActions.fetchGetUsersByKeyword(1, page * pageSize, keyword));
-      // setSearchParams({ page, size: pageSize, keyword });
-    } else {
-      dispatch(UserActions.fetchGetUsersByKeyword(page, pageSize, keyword));
+    if (userStore.userByKeyword.total < 0) {
+      if (
+        page !== 1 &&
+        userStore.userByKeyword.total < 1 &&
+        userStore.userByKeyword.page !== page
+      ) {
+        dispatch(UserActions.fetchGetUsersByKeyword(1, page * pageSize, keyword));
+        // setSearchParams({ page, size: pageSize, keyword });
+      } else {
+        dispatch(UserActions.fetchGetUsersByKeyword(page, pageSize, keyword));
+      }
     }
   }, [
     dispatch,
@@ -82,12 +88,12 @@ const SearchResult = () => {
         )}
         onFetchNext={(payload) => {
           const page = payload.page + 1;
-          dispatch(UserActions.fetchGetUsersByKeyword(page, payload.pageSize, keyword));
           if (keyword) {
             setSearchParams({ page, size: pageSize, keyword });
           } else {
             setSearchParams({ page, size: pageSize });
           }
+          dispatch(UserActions.fetchGetUsersByKeyword(page, payload.pageSize, keyword));
         }}
       />
     );
