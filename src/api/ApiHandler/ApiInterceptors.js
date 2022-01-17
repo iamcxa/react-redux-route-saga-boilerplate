@@ -1,6 +1,6 @@
 import { axios } from '@udea-io/axios-wrapper';
-// import { ApiActions } from '@udea-io/axios-wrapper/dist/store';
-// import ApiStore from '@udea-io/axios-wrapper/dist/store/Store';
+import { ApiActions } from '@udea-io/axios-wrapper/dist/store';
+import ApiStore from '@udea-io/axios-wrapper/dist/store/Store';
 import { get } from 'lodash';
 
 import * as ApiResponse from '../ApiResponse';
@@ -8,7 +8,7 @@ import * as ApiResponse from '../ApiResponse';
 export const requestInterceptor = {
   onFulfilled(config) {
     // Do something before request is sent
-    // ApiStore.dispatch(ApiActions.onApiFetching(config));
+    ApiStore.dispatch(ApiActions.onApiFetching(config));
     return config;
   },
   onRejected(error) {
@@ -23,14 +23,14 @@ export const responseInterceptor = {
     // Do something with response data
 
     console.log('responseInterceptor response=>', response);
-    // ApiStore && ApiStore.dispatch(ApiActions.onApiFetchSuccess(response));
+    ApiStore && ApiStore.dispatch(ApiActions.onApiFetchSuccess(response));
     return response;
   },
   onRejected: (canceler) => (error) => {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
 
-    // ApiStore && ApiStore.dispatch(ApiActions.onApiFetchFailure(error));
+    ApiStore && ApiStore.dispatch(ApiActions.onApiFetchFailure(error));
 
     // ensure request is be canceled
     const isCanceled = axios.isCancel(error);

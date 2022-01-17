@@ -1,4 +1,4 @@
-import { ApiProvider } from '@udea-io/axios-wrapper/dist/Store';
+import { ApiProvider } from '@udea-io/axios-wrapper/dist/store';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
