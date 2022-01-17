@@ -3730,17 +3730,17 @@
     "@typescript-eslint/types" "5.9.0"
     eslint-visitor-keys "^3.0.0"
 
-"@udea-io/axios-wrapper@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@udea-io/axios-wrapper/-/axios-wrapper-0.1.6.tgz#0ec7067a52f808212fe843e1ed0cfb0ef7f3e0eb"
-  integrity sha512-uaD8CKzZewZHTICu6ME9GksYSsUgxQOnbb9IjfzwHu1xUbed9cFpfscZSm8DfLW74EgehBI1yetbYvyvXdO+Zg==
+"@udea-io/axios-wrapper@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@udea-io/axios-wrapper/-/axios-wrapper-0.1.7.tgz#04fddbb28e8788bb5cd01f6173b8db8d24e70a7f"
+  integrity sha512-IuZ01cQgSmnH9ovmj2GOMS/sCJG4Do8BLZY4KT38R27UyYMYdbyyjWpWJPl4uzi0XS767FqLVWzVLYGKtplHHg==
   dependencies:
     axios "^0.21.1"
 
-"@udea-io/eslint-config@^0.1.11":
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/@udea-io/eslint-config/-/eslint-config-0.1.11.tgz#3e5bedbefcf436016602dd2c45aa3de9eaf42235"
-  integrity sha512-MMvUf8CcsCPF/GWT4DfUgU+s37YHUyGdXJAcnHfMtb0WwSoKVnM/dJCUykAwTTK8XwUqdqv4WA1J31FX0ND6Tg==
+"@udea-io/eslint-config@^0.1.12":
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/@udea-io/eslint-config/-/eslint-config-0.1.12.tgz#f71f3dcc24c8bc5176751d891bc384815c3b0eed"
+  integrity sha512-pAXFCWfgZBbamYwqsjg9f2EqqWG3DXQsKgU82D3ZfOBZskxb4+QL/V1Zd2lHphbXjUyvMeX/uTACwKhNguV27w==
 
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
