@@ -42,8 +42,6 @@ export function* fetchGetUsers({ page, pageSize }) {
       }),
       User.getUsers({ page, pageSize }),
     );
-
-    console.log('fetchGetUsers res=>', res);
     if (res.data) {
       yield put(UserActions.fetchGetUsersSuccess(res.data));
     } else {
