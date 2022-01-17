@@ -3,13 +3,28 @@ import { useTheme } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import ThemeProvider from '~/components/ExamUI/Theme';
+import ThemeProvider, { theme as DefaultTheme } from './Theme';
 
-const ActivityIndicator = ({ height, indicatorColor, bgColor, variant, ...props }) => {
+const ActivityIndicator = ({
+  theme: config,
+  height,
+  bgColor,
+  indicatorColor,
+  variant,
+  ...props
+}) => {
   const theme = useTheme();
   const Indicator = variant === 'circle' ? CircularProgress : LinearProgress;
+  const absoluteCenter = {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    m: 'auto',
+  };
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={config}>
       <CssBaseline />
       <Box
         flex={1}
@@ -23,6 +38,7 @@ const ActivityIndicator = ({ height, indicatorColor, bgColor, variant, ...props 
           sx={{
             color: indicatorColor.startsWith('#') ? indicatorColor : theme.palette[indicatorColor],
             width: variant === 'linear' && '33vw',
+            ...absoluteCenter,
           }}
           {...props}
         />
@@ -36,6 +52,7 @@ ActivityIndicator.propTypes = {
   bgColor: PropTypes.string,
   indicatorColor: PropTypes.string,
   variant: PropTypes.oneOf(['linear', 'circle']),
+  theme: PropTypes.object,
 };
 
 ActivityIndicator.defaultProps = {
@@ -43,6 +60,7 @@ ActivityIndicator.defaultProps = {
   bgColor: 'transparent',
   indicatorColor: 'primary',
   variant: 'circle',
+  theme: DefaultTheme,
 };
 
 export default ActivityIndicator;
